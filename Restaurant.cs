@@ -4,8 +4,8 @@
     {
         private List<MenuItem> _menuItem = new List<MenuItem>();
         private Queue<Order> _orders = new Queue<Order>();
-
         
+
         public void AddtoMenu(MenuItem menuItem)
         {
             _menuItem.Add(menuItem);
@@ -25,7 +25,7 @@
         public void CreateOrder(Order order)
         {
             _orders.Enqueue(order);
-            Console.WriteLine($"::------------------::New orders::--------------------::");
+            Console.WriteLine($"::--------------------::New order::----------------------::");
             Console.WriteLine($"{order}\n");
         }
 
@@ -44,6 +44,7 @@
             }
             else
             {
+                
                 var count = 0;
                 foreach (var order in _orders)
                 {

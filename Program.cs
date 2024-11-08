@@ -29,9 +29,8 @@
             LaMafioso.AddtoMenu(Tiramisu);
             LaMafioso.AddtoMenu(Pannacotta);
             Console.WriteLine("::--------------------------------------------------------::");
-            LaMafioso.ShowMenu();
+            LaMafioso.ShowMenu(); // Displays the menu at the restaurant.
             /*::--------------------------------------------------------::*/
-
             // Making some orders.
             Order order1 = new Order(new List<MenuItem>(), 6, 2);
             order1.AddItem(Garlic);
@@ -41,7 +40,7 @@
             order1.AddItem(Pannacotta);
             order1.AddItem(Tiramisu);
             LaMafioso.CreateOrder(order1);
-            
+            /*::--------------------------------------------------------::*/
             Order order2 = new Order(new List<MenuItem>(), 8, 4);
             order2.AddItem(Garlic);
             order2.AddItem(Garlic);
@@ -52,7 +51,7 @@
             order2.AddItem(Carbonara);
             order2.AddItem(Vongele);
             LaMafioso.CreateOrder(order2);
-
+            /*::--------------------------------------------------------::*/
             Order order3 = new Order(new List<MenuItem>(), 2, 6);
             order3.AddItem(Bolognese);
             order3.AddItem(Bolognese);
@@ -61,11 +60,26 @@
             order3.AddItem(Vongele);
             order3.AddItem(Vongele);
             LaMafioso.CreateOrder(order3);
-
+            /*::--------------------------------------------------------::*/
             LaMafioso.ShowOrders();
+            LaMafioso.ShowOrderCount();
             LaMafioso.ShowNextOrder();
             LaMafioso.HandleOrder();
             LaMafioso.ShowOrderCount();
+            /*::--------------------------------------------------------::*/
+            Order order4 = new Order(new List<MenuItem>(), 5, 1);
+            order4.AddItem(Vongele);
+            order4.AddItem(Tiramisu);
+            LaMafioso.CreateOrder(order4);
+            /*::--------------------------------------------------------::*/
+            LaMafioso.ShowOrderCount();
+            LaMafioso.HandleOrder();
+            LaMafioso.HandleOrder();
+            LaMafioso.ShowOrderCount();
+            LaMafioso.ShowNextOrder();
+            LaMafioso.HandleOrder();
+            LaMafioso.ShowOrderCount();
+
             Console.ReadLine();
         }
     }

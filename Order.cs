@@ -1,4 +1,6 @@
-﻿namespace LABB4_Generics_SUT24
+﻿using System.Collections.Generic;
+
+namespace LABB4_Generics_SUT24
 {
     internal class Order
     {
@@ -23,23 +25,22 @@
             _orderItems.Add(item);
         }
 
-        public void Orders()
-        {
-            var orders = _orderItems;
+        ////public void Orders()
+        ////{
+        ////    var orders = _orderItems;
 
-            if(_orderItems.Count == 0)
-            {
-                Console.WriteLine("There are no orders at the moment.");
-            }
-            else
-            {
-                foreach (var item in orders)
-                {
-                    Console.WriteLine(item);
-                }
-            }
-
-        }
+        ////    if(_orderItems.Count == 0)
+        ////    {
+        ////        Console.WriteLine("There are no orders at the moment.");
+        ////    }
+        ////    else
+        ////    {
+        ////        foreach (var item in orders)
+        ////        {
+        ////            Console.WriteLine(item);
+        ////        }
+        ////    }
+        //}
         public override string ToString()
         {
             string items = string.Join(".\n", _orderItems);
