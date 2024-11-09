@@ -2,8 +2,6 @@
 {
     internal class Program
     {
-        
-         
         static void Main(string[] args)
         {
             //Creating a restaurant.
@@ -28,7 +26,6 @@
             LaMafioso.AddtoMenu(Vongele);
             LaMafioso.AddtoMenu(Tiramisu);
             LaMafioso.AddtoMenu(Pannacotta);
-            Console.WriteLine("::--------------------------------------------------------::");
             LaMafioso.ShowMenu(); // Displays the menu at the restaurant.
             /*::--------------------------------------------------------::*/
             // Making some orders.
@@ -51,7 +48,7 @@
             order2.AddItem(Carbonara);
             order2.AddItem(Vongele);
             LaMafioso.CreateOrder(order2);
-            /*::--------------------------------------------------------::*/
+            ///*::--------------------------------------------------------::*/
             Order order3 = new Order(new List<MenuItem>(), 2, 6);
             order3.AddItem(Bolognese);
             order3.AddItem(Bolognese);
@@ -66,12 +63,12 @@
             LaMafioso.ShowNextOrder();
             LaMafioso.HandleOrder();
             LaMafioso.ShowOrderCount();
-            /*::--------------------------------------------------------::*/
+            ///*::--------------------------------------------------------::*/
             Order order4 = new Order(new List<MenuItem>(), 5, 1);
             order4.AddItem(Vongele);
             order4.AddItem(Tiramisu);
             LaMafioso.CreateOrder(order4);
-            /*::--------------------------------------------------------::*/
+            ///*::--------------------------------------------------------::*/
             LaMafioso.ShowOrderCount();
             LaMafioso.HandleOrder();
             LaMafioso.HandleOrder();
@@ -79,6 +76,7 @@
             LaMafioso.ShowNextOrder();
             LaMafioso.HandleOrder();
             LaMafioso.ShowOrderCount();
+
 
             Console.ReadLine();
         }
