@@ -20,19 +20,37 @@ namespace LABB4_Generics_SUT24
             _tableNumber = tableNumber;
             _guestAmount = guests;
         }
+       
+        public int OrderId => _orderId;
 
+        //Method to add items to the list 'MenuItem'.
         public void AddItem(MenuItem dish)
         {
             _orderItems.Add(dish);
         }
         public override string ToString()
         {
+            //Loop to get the sum of ordered items.
+            decimal total = 0m;
+            foreach (var item in _orderItems)
+            {
+                total += item.Price;
+            }
 
+            // Joining the items togheter as a vertical list.
            string items = string.Join("\n", _orderItems);
-            return $"Order: {_orderId}\n" +
+
+            //Calculation to get total amount + tip.
+            decimal tip = 1.15m;
+            decimal totaltip = total * tip;
+
+            return 
                 $"Table: {_tableNumber}\n" +
                 $"Guests: {_guestAmount}\n" +
-                $"Ordered:\n{items}";
+                $"Ordered:\n{items}\n" +
+                $"Amount to pay: {total:c}\n" +
+                $"With tip: {totaltip:c}";
         }
     }
 }
+

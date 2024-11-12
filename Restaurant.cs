@@ -2,16 +2,20 @@
 {
     internal class Restaurant
     {
-        private List<MenuItem> _menuItem = new List<MenuItem>();
-        private Queue<Order> _orders = new Queue<Order>();
-        public DateTime TimeStamp { get; set; }
+        //List of all items on the menu.
+        public List<MenuItem> _menuItem = new List<MenuItem>();
+
+        //Queue to handle orders with FIFO method.
+        public Queue<Order> _orders = new Queue<Order>();
+
+        //DateTime to register when the order is placed, to calculate how long it took to get it done.
+        public DateTime TimeStamp { get; set; } // To see how long the orders take from order to being ready.
 
         //Method to add items to the menu.
         public void AddtoMenu(MenuItem menuItem)
         {
             _menuItem.Add(menuItem);
             Console.WriteLine($"{menuItem.Name} was added to the menu.");
-            
         }
         //Method to show the restaurants menu.
         public void ShowMenu()
@@ -29,17 +33,16 @@
             TimeStamp = DateTime.Now;
             _orders.Enqueue(order);
             Console.WriteLine($"::--------------------::New order::----------------------::");
-            Console.WriteLine($"{order}\n");
+            Console.WriteLine($"Order: {order.OrderId} was sent to the kitchen!");
             Console.WriteLine($"The order was placed at {TimeStamp}");
         }
-
+        //Method to "handle" or take away first order in queue.
         public void HandleOrder()
         {
             DateTime Time = DateTime.Now;
-
-            Console.WriteLine($"::-------------::Order ready for service::---------------::");
+            Console.WriteLine($"::-------------::Order is ready for service::---------------::");
             Console.WriteLine($"{_orders.Dequeue()}\n");
-            Console.WriteLine($"The order took {TimeStamp - Time} to handle.");
+            Console.WriteLine($"The order took {Time - TimeStamp} to handle.");
         }
         // Method to display all orders in que.
         public void ShowOrders()
@@ -55,7 +58,7 @@
                 foreach (var order in _orders)
                 {
                     count++;
-                    Console.WriteLine($"::---------------------::Order: {count}::-----------------------::");
+                    Console.WriteLine($"::---------------------::Order: {order.OrderId}::-----------------------::");
                     Console.WriteLine(order);
                 }
             }
@@ -73,7 +76,6 @@
                 Console.WriteLine($"::--------------------::Next Order::----------------------::");
                 Console.WriteLine($"{_orders.Peek()}\n");
             }
-            
         }
         //Method to display how many items are in que.
         public void ShowOrderCount()
@@ -96,5 +98,6 @@
                 }
             }
         }
+        
     }
 }

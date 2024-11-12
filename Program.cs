@@ -1,4 +1,4 @@
-﻿namespace LABB4_Generics_SUT24 //Fredrik
+﻿namespace LABB4_Generics_SUT24 //Fredrik Jonsson SUT_24
 {
     internal class Program
     {
@@ -77,7 +77,7 @@
             LaMafioso.HandleOrder();
             LaMafioso.ShowOrderCount();
 
-
+            
             Console.ReadLine();
         }
     }
