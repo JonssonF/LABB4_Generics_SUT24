@@ -20,8 +20,12 @@ namespace LABB4_Generics_SUT24
             _tableNumber = tableNumber;
             _guestAmount = guests;
         }
-       
-        public int OrderId => _orderId;
+       public int OrderId
+        {
+            get { return _orderId; }
+            private set { _orderId = value; }
+        }
+        //public int OrderId => _orderId;
 
         //Method to add items to the list 'MenuItem'.
         public void AddItem(MenuItem dish)

@@ -9,7 +9,7 @@
         public Queue<Order> _orders = new Queue<Order>();
 
         //DateTime to register when the order is placed, to calculate how long it took to get it done.
-        public DateTime TimeStamp { get; set; } // To see how long the orders take from order to being ready.
+        public DateTime TimeStamp { get; set; }
 
         //Method to add items to the menu.
         public void AddtoMenu(MenuItem menuItem)
