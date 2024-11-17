@@ -25,7 +25,6 @@ namespace LABB4_Generics_SUT24
             get { return _orderId; }
             private set { _orderId = value; }
         }
-        //public int OrderId => _orderId;
 
         //Method to add items to the list 'MenuItem'.
         public void AddItem(MenuItem dish)
@@ -51,7 +50,7 @@ namespace LABB4_Generics_SUT24
             return 
                 $"Table: {_tableNumber}\n" +
                 $"Guests: {_guestAmount}\n" +
-                $"Ordered:\n{items}\n" +
+                $"Ordered:\n{items}\n\n" +
                 $"Amount to pay: {total:c}\n" +
                 $"With tip: {totaltip:c}";
         }
